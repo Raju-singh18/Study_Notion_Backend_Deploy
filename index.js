@@ -44,8 +44,7 @@ async function connect(){
 //add middleware
 app.use((req,res, next)=>{
   if(!isConnected){
-    database.connect();
-    cloudinaryConnect();
+    connect();
   }
   next();
 })
