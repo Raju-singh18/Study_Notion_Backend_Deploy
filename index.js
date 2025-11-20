@@ -33,7 +33,7 @@ const PORT = process.env.PORT || 4000;
 let isConnected = false;
 async function connect(){
   try {
-     database.connect();
+    database.connect();
      cloudinaryConnect();
      isConnected=true;
   } catch (error) {
@@ -42,9 +42,9 @@ async function connect(){
 }
 
 //add middleware
-app.use((req,res, next)=>{
+app.use(async (req,res, next)=>{
   if(!isConnected){
-    connect();
+   await connect();
   }
   next();
 })
@@ -55,7 +55,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "http://localhost:3000", // your react aapp
+    origin: "https://study-notion-deploy-uxqd.vercel.app", // your react aapp
     credentials: true, 
   })
 );
