@@ -55,7 +55,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "https://study-notion-deploy-uxqd.vercel.app", // your react aapp
+    origin:`${process.env.FRONTEND_URL}`, // your react aapp
     credentials: true, 
   })
 );
