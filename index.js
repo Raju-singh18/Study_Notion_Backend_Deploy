@@ -55,7 +55,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin:"*", // your react aapp
+    origin:"https://study-notion-deploy-chi.vercel.app/", // your react aapp
     credentials: true, 
   })
 );
